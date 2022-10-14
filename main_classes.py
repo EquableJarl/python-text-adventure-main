@@ -1,12 +1,3 @@
-import json
-
-chapter = "1"
-game_on = True
-
-json_file_path = "data.json"
-with open(json_file_path, 'r') as j:
-    data = json.loads(j.read())
-
 class Chapter:
     def __init__(self, text, options):
         self.text = text
@@ -26,11 +17,11 @@ class Gameloop:
         self.chapter = chapter
         self.choice = ""
         self.direction = ""
-    
+
     def game_main(self):
         print(self.chapter.text)
         for count, opt in enumerate(self.chapter.op_text):
-            print(str(count + 1) + ") " + opt )
+            print(str(count + 1) + ") " + opt)
         while self.choice == "":
             self.choice_and_check()
         self.get_direction()
@@ -44,31 +35,6 @@ class Gameloop:
                 print("That wasn't an option, please try again! ")
         except:
             print("Thats not even a number!, please try again")
-      
+
     def get_direction(self):
         self.direction = self.chapter.op_dest[int(self.choice) - 1]
-        
-
-def getChapter(chap):
-    t = data[chap]["text"]
-    o = data[chap]["options"]
-    return Chapter(t,o)
-
-
-def main():
-    global chapter
-    current_chap = getChapter(chapter)
-    game = Gameloop(current_chap)
-    game.game_main()
-    chapter = game.direction
-
-
-while game_on == True:
-    main()
-
-
-
-
-
-
-

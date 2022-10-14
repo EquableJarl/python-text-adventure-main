@@ -1,0 +1,66 @@
+'1':
+  options:
+    '1':
+      direction: '2'
+      text: 'look around the room '
+    '2':
+      direction: '3'
+      text: go back to sleep
+  text: You awake in a small room
+'2':
+  options:
+    '1':
+      direction: '4'
+      text: 'go to door '
+    '2':
+      direction: '5'
+      text: go to table
+  text: You look around the room there isn't much in there, a door on the left hand
+    wall and a table in the against the wall in front of you
+'3':
+  options:
+    '1':
+      direction: '2'
+      text: 'look around the room '
+  text: You lay down and have a little nap...
+'4':
+  options:
+    '1':
+      direction: '1'
+      text: 'no more options!!! '
+  text: You arrive at a door
+'5':
+  options:
+    '1':
+      check:
+        'False': '6'
+        'True': '7'
+        value: draw
+      direction: check
+      text: 'look at the draw '
+    '2':
+      direction: '2'
+      text: 'leave the table '
+  text: You arrive at a table
+'6':
+  options:
+    '1':
+      direction: '5'
+      text: 'look at the table '
+    '2':
+      direction: '2'
+      text: leave the table
+    extra_option:
+      check_list: draw-True
+      inventory_add: key
+  text: You look in the draw, there is a key! You pick the key up and put it in your
+    pocket
+'7':
+  options:
+    '1':
+      direction: '5'
+      text: 'look at the table '
+    '2':
+      direction: '2'
+      text: leave the table
+  text: You look in the draw, its empty, you remember you have a key ibn your pocket
