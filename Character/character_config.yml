@@ -1,0 +1,50 @@
+professions:
+  Priest:
+  - 5
+  - 3
+  - 4
+  - 7
+  - 5
+  - 2
+  Mage:
+  - 3
+  - 3
+  - 7
+  - 1
+  - 6
+  - 4
+  Rouge:
+  - 6
+  - 5
+  - 5
+  - 2
+  - 3
+  - 7
+  Troubadour:
+  - 7
+  - 4
+  - 5
+  - 4
+  - 3
+  - 5
+  Warrior:
+  - 4
+  - 7
+  - 2
+  - 5
+  - 4
+  - 5
+  Wayfarer:
+  - 3
+  - 6
+  - 3
+  - 4
+  - 7
+  - 5
+professions_key:
+  - Charisma
+  - Combat
+  - Magic
+  - Sanctity
+  - Scouting
+  - Thievery

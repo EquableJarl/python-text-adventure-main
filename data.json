@@ -1,0 +1,96 @@
+{
+    "1": {
+        "text": "You awake in a small room", 
+        "options" : { 
+            "1" : { 
+                "text" : "look around the room ", 
+                "direction" : "2"
+            }, 
+            "2" : {
+                 "text" : "go back to sleep", 
+                 "direction" : "3" 
+            }
+        }
+    },
+    "2": {
+        "text": "You look around the room there isn't much in there, a door on the left hand wall and a table in the against the wall in front of you", 
+        "options" : { 
+            "1" : { 
+                "text" : "go to door ", 
+                "direction" : "4"
+            }, 
+            "2" : {
+                 "text" : "go to table", 
+                 "direction" : "5" 
+            }
+        }
+    },
+    "3": {
+        "text": "You lay down and have a little nap...", 
+        "options" : { 
+            "1" : { 
+                "text" : "look around the room ", 
+                "direction" : "2"
+            }
+        }
+    },
+    "4": {
+        "text": "You arrive at a door", 
+        "options" : { 
+            "1" : { 
+                "text" : "no more options!!! ", 
+                "direction" : "1"
+            }
+        }
+    },
+    "5": {
+        "text": "You arrive at a table", 
+        "options" : { 
+            "1" : { 
+                "text" : "look at the draw ", 
+                "direction" : "check",
+                "check" : {
+                    "value" : "draw",
+                    "True" : "7",
+                    "False" : "6"
+
+
+                }
+            },
+            "2" : { 
+                "text" : "leave the table ", 
+                "direction" : "2"
+            }
+        }
+    },
+    "6": {
+        "text": "You look in the draw, there is a key! You pick the key up and put it in your pocket", 
+        "options" : { 
+            "1" : { 
+                "text" : "look at the table ", 
+                "direction" : "5"
+            },
+            "2" : { 
+                "text" : "leave the table", 
+                "direction" : "2"
+            },
+            "extra_option" : {
+                "inventory_add" : "key",
+                "check_list" : "draw-True"
+            }
+        }
+    },
+    "7": {
+        "text": "You look in the draw, its empty, you remember you have a key ibn your pocket", 
+        "options" : { 
+            "1" : { 
+                "text" : "look at the table ", 
+                "direction" : "5"
+            },
+            "2" : { 
+                "text" : "leave the table", 
+                "direction" : "2"
+            }
+        }
+    }
+}
