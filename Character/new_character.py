@@ -4,6 +4,7 @@ import datetime
 with open(r'Character/character_config.yml') as file:
     creation_stats = yaml.load(file, Loader=yaml.FullLoader)
 
+
 class New_Character:
     def __init__(self, config):
         self.file = file
@@ -24,7 +25,8 @@ class New_Character:
             print("_______________")
             print("***************")
             for count, value in enumerate(self.config["professions"][p]):
-                print(self.config["professions_key"][count] + " = " + str(value))
+                print(self.config["professions_key"]
+                      [count] + " = " + str(value))
             print("")
 
     def get_profession_selection(self):
@@ -36,7 +38,7 @@ class New_Character:
             self.profession = choice
         else:
             print("Thats not a valid choice, please try again.")
-    
+
     def do_professions(self):
         self.describe_professions()
         while self.profession == "":
@@ -51,24 +53,17 @@ class New_Character:
         suffix = dt.strftime("%d%m%y%H%M%S")
         return self.name + "-" + suffix + ".yml"
 
-    
     def export_to_ymal(self):
-        data = {"Name" : self.name, 
-            "Profession" : self.profession, 
-            "Abilities" : self.abilities}
+        data = {"Name": self.name,
+                "Profession": self.profession,
+                "Abilities": self.abilities}
         file_name = self.save_file_name()
         with open("Save/" + file_name, 'w') as file:
             yaml.dump(data, file)
 
-    
 
-
-    
 test = New_Character(creation_stats)
 print(test.name)
 print(test.profession)
 print(test.abilities)
 test.export_to_ymal()
-
-
-    

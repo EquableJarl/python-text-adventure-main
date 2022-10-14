@@ -1,5 +1,12 @@
+from Character.new_character import New_Character as New_Character
+import yaml
+
+with open(r'Character/character_config.yml') as file:
+    creation_stats = yaml.load(file, Loader=yaml.FullLoader)
+
+
 class Chapter:
-    def __init__(self, text, options):
+    def __init__(self, text, options, player):
         self.text = text
         self.option = options
         self.op_text = self.get_options("text")
@@ -38,3 +45,38 @@ class Gameloop:
 
     def get_direction(self):
         self.direction = self.chapter.op_dest[int(self.choice) - 1]
+
+
+class intro():
+    def __init__(self):
+        self.choice = ""
+        self.print_intro()
+        # self.run_selection()
+
+    def print_intro(self):
+        print("""
+        Welcome to the game!
+    
+        1) New Game
+        2) Load Game
+    
+        """)
+        while self.choice == "":
+            self.check_and_choice()
+
+    def check_and_choice(self):
+        choice = input("Please make your selection : ")
+        if choice == "1" or choice == "2":
+            self.choice = choice
+        else:
+            print("That was not a valid selection!")
+
+    def run_selection(self):
+        if self.choice == "1":
+            player = New_Character(creation_stats)
+            player.export_to_ymal
+        else:
+            pass
+
+
+# intro()

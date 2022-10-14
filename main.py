@@ -1,6 +1,7 @@
 import yaml
 from main_classes import Chapter as Chapter
 from main_classes import Gameloop as Gameloop
+from main_classes import intro as intro
 
 chapter = "1"
 game_on = True
@@ -22,6 +23,7 @@ def getChapter(chap):
 
 def main():
     global chapter
+    intro()
     current_chap = getChapter(chapter)
     game = Gameloop(current_chap)
     game.game_main()
