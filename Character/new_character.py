@@ -62,8 +62,8 @@ class New_Character:
             yaml.dump(data, file)
 
 
-test = New_Character(creation_stats)
-print(test.name)
-print(test.profession)
-print(test.abilities)
-test.export_to_ymal()
+# test = New_Character(creation_stats)
+# print(test.name)
+# print(test.profession)
+# print(test.abilities)
+# test.export_to_ymal()

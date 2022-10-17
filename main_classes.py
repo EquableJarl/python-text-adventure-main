@@ -1,5 +1,6 @@
 from Character.new_character import New_Character as New_Character
 import yaml
+import os
 
 with open(r'Character/character_config.yml') as file:
     creation_stats = yaml.load(file, Loader=yaml.FullLoader)
@@ -47,11 +48,34 @@ class Gameloop:
         self.direction = self.chapter.op_dest[int(self.choice) - 1]
 
 
+class Get_Save():
+    # TODO list the saves and have the user select, also have a call that passes direct to the factory for new charachers
+    def __init__(self):
+        self.save_list = []
+        self.choice = ""
+        self.get_and_list_saves()
+        self.get_choice()
+
+    def get_and_list_saves(self):
+        self.save_list = os.listdir("Save")
+        for index, save in enumerate(self.save_list):
+            print(str(index + 1) + ") " + save)
+
+    def get_choice(self):
+        while self.choice == "":
+            choice = input("Please make your selection : ")
+            if int(choice) in range(1, 3):
+                self.choice = self.save_list[int(choice) - 1]
+            else:
+                print("This is not a vaild selection.")
+
+
 class intro():
     def __init__(self):
         self.choice = ""
         self.print_intro()
-        # self.run_selection()
+        self.run_selection()
+        self.save_file = ""
 
     def print_intro(self):
         print("""
@@ -74,9 +98,7 @@ class intro():
     def run_selection(self):
         if self.choice == "1":
             player = New_Character(creation_stats)
-            player.export_to_ymal
-        else:
-            pass
-
-
-# intro()
+            player.export_to_ymal()
+        elif self.choice == "2":
+            get_save = Get_Save()
+            self.save_file = get_save.choice

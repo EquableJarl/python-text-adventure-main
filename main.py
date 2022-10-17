@@ -23,12 +23,11 @@ def getChapter(chap):
 
 def main():
     global chapter
-    intro()
     current_chap = getChapter(chapter)
     game = Gameloop(current_chap)
     game.game_main()
     chapter = game.direction
 
 
-while game_on == True:
-    main()
+save = intro()
+print(save.save_file)
