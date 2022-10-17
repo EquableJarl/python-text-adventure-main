@@ -14,6 +14,7 @@ class New_Character:
         self.do_professions()
         self.abilities = []
         self.set_abilities()
+        self.save_file = ""
 
     def get_name(self):
         name = input("What is your name?")
@@ -58,6 +59,7 @@ class New_Character:
                 "Profession": self.profession,
                 "Abilities": self.abilities}
         file_name = self.save_file_name()
+        self.save_file = file_name
         with open("Save/" + file_name, 'w') as file:
             yaml.dump(data, file)
 

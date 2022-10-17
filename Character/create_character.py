@@ -1,4 +1,5 @@
 import yaml
+import os
 
 
 class Player:
@@ -28,14 +29,12 @@ class Player_Factory:
             self.player.ability.append(a)
 
 
-def load_player():
+def load_player(save):
+    print("from the load_player function - Loading player " + save)
     p = Player()
-    with open(r'test.yml') as file:
+    os.chdir("Save")
+    with open(save, "r") as file:
         load = yaml.load(file, Loader=yaml.FullLoader)
     Player_Factory(p, load)
     return p
 
-
-my_player = load_player()
-
-print(my_player.name + my_player.profession + str(my_player.ability))
