@@ -31,14 +31,14 @@ class New_Character:
             print("")
 
     def get_profession_selection(self):
-        choice = input("What profession would you like to chose? : ")
+        choice = input("What profession would you like to chose? : ")    
         professions = []
         for p in self.config["professions"]:
             professions.append(p.upper())
         if choice.upper() in professions:
-            self.profession = choice
+            self.profession = choice.capitalize() # Captalize added to fix bug
         else:
-            print("Thats not a valid choice, please try again.")
+            print("Thats not a valid choice, please try again you soppy little twat.")
 
     def do_professions(self):
         self.describe_professions()
