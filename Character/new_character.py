@@ -38,7 +38,7 @@ class New_Character:
         if choice.upper() in professions:
             self.profession = choice.capitalize() # Captalize added to fix bug
         else:
-            print("Thats not a valid choice, please try again.")
+            print("Thats not a valid choice, please try again you soppy little twat.")
 
     def do_professions(self):
         self.describe_professions()
